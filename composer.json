@@ -1,0 +1,28 @@
+{
+    "name": "jschaedl/amfphpdoctrineexample",
+    "type": "example",
+    "description": "amfphp doctrine example",
+    "keywords": ["amfphp", "doctrine", "example"],
+    "homepage": "http://github.com/jschaedl/AmfphpDoctrineExample",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Schädlich",
+            "email": "mail@janschaedlich.com",
+            "homepage": "https://github.com/jschaedl/"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*", 
+        "phploc/phploc": "*",
+        "sebastian/phpcpd": "*"
+    },
+    "require": {
+        "phpunit/php-code-coverage": ">=1.2.10,<1.3.0",
+        "doctrine/orm": "*",
+        "silexlabs/amfphp": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "AmfphpDoctrineExample": "services" }
+    }
+}
