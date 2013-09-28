@@ -1,9 +1,15 @@
 <?php
 
 class ExampleService 
-{
+{	
+	private $dic;
+	
+	function __constructor() {
+		$dic = new DIContainer();
+	}
+	
     public function test() {
-        return 'hallo';
+        return 'test';
     }
     
     public function testParam($param) {
