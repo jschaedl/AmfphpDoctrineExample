@@ -5,30 +5,21 @@
  */
 abstract class AbstractDTO
 {
-	/**
- 	 * @Column(type="boolean")
-	 */
-	protected $active = true;
+	/** @Column(type="boolean") */
+	public $active = true;
 
-	/**
- 	 * @Column(type="datetime")
-	 */
-	protected $creationDate;
+	/**  @Column(type="datetime") */
+	public $creationDate;
 
-	/**
- 	 * @Column(type="datetime")
-	 */
-	protected $modificationDate;
+	/** @Column(type="datetime")  */
+	public $modificationDate;
 	
-	/**
-	 * @Column(columnDefinition = "datetime")
-	 */
-	protected $lock;
+	/** @Column(type="datetime") */
+	public $lock;
 	
-	/**
-	 * @PreUpdate
-	 */
-	protected function onUpdate() {
+	
+	/** @PreUpdate */
+	public function onUpdate() {
 		$this->modificationDate = new DateTime();
 	}
 }

@@ -22,7 +22,10 @@ class UserDTO extends AbstractDTO
     
     /** @Column(type="datetime") */
     public $lastLogin;
-   	
+    
+    /** @OneToMany(targetEntity="AccountDTO", mappedBy="userId", fetch="EAGER", indexBy="accountId") */
+    public $accounts;
+
     
     public function generatePassword($password) {
     	$this->password = md5($password);
