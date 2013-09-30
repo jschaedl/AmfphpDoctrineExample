@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="AmfphpDocttrineExample" default="01_phpunit">
+	<property name="PHP_VERSION" value="5.4.10"/>
+	<target name="01_phpunit">
+	    <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+	        <arg value="vendor/bin/phpunit"/>
+	        <arg value="--verbose"/>
+	  </exec>
+	</target>
+	<target name="02_phploc">
+	    <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+	        <arg value="vendor/bin/phploc"/>
+	    	<arg value="services"/>
+	    </exec>
+	</target>
+    <target name="03_doctrine create">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:create"/>
+        	<arg value="--verbose"/>
+        </exec>
+    </target>
+	<target name="04_doctrine create --dump-sql">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:create"/>
+            <arg value="--dump-sql"/>
+            <arg value="--verbose"/>
+        </exec>
+    </target>
+	<target name="05_doctrine update">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:update"/>
+            <arg value="--verbose"/>
+        </exec>
+    </target>
+	<target name="06_doctrine update --force">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:update"/>
+            <arg value="--force"/>
+            <arg value="--verbose"/>
+        </exec>
+    </target>
+	<target name="07_doctrine update --dump-sql">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:update"/>
+            <arg value="--dump-sql"/>
+            <arg value="--verbose"/>
+        </exec>
+    </target>
+	<target name="08_doctrine drop --force">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:drop"/>
+            <arg value="--force"/>
+            <arg value="--verbose"/>
+        </exec>
+    </target>
+	<target name="09_doctrine drop --dump-sql">
+        <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
+            <arg value="vendor/bin/doctrine"/>
+            <arg value="orm:schema-tool:drop"/>
+            <arg value="--dump-sql"/>
+            <arg value="--verbose"/>
+        </exec>
+    </target>
+</project>

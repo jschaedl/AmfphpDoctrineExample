@@ -1,24 +1,17 @@
-<phpunit backupGlobals="true"
-         backupStaticAttributes="false"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         syntaxCheck="false"
-         bootstrap="tests/bootstrap.php">
+<phpunit 
+    backupGlobals="true"
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="false"
+    bootstrap="tests/bootstrap.php">
     <testsuites>
-        <testsuite name="IBAN Test Suite">
+        <testsuite name="AmfphpDoctrineExampleTest Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./src/</directory>
-            <exclude>
-                <file>./src/IBAN/Autoloader.php</file>
-            </exclude>
-        </whitelist>
-    </filter>
 </phpunit>
