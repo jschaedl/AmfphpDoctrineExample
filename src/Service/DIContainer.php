@@ -1,10 +1,11 @@
 <?php
 
+namespace Service;
 
 use \Doctrine\ORM\Tools\Setup;
 use \Doctrine\ORM\EntityManager;
 
-class DIContainer extends Pimple
+class DIContainer extends \Pimple
 {
 	public function __construct() {
 		$this['isDevMode'] = false;

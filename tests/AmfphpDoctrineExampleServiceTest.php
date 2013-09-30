@@ -1,6 +1,14 @@
 <?php
 
-class AmfphpDoctrineExampleServiceTest extends PHPUnit_Framework_TestCase
+namespace tests;
+
+use Service\Vo\User\UserDTO;
+use Service\Vo\Account\LecturerAccountDTO;
+use Service\Vo\Account\GuestAccountDTO;
+use Service\Vo\Account\TutorAccountDTO;
+use Service\AmfphpDoctrineExampleService;
+
+class AmfphpDoctrineExampleServiceTest extends \PHPUnit_Framework_TestCase
 {
 	protected $amfphpDoctrineExampleService;
 	
@@ -18,20 +26,20 @@ class AmfphpDoctrineExampleServiceTest extends PHPUnit_Framework_TestCase
 		$user->generatePassword('123456');
 		$user->generateActivationKey();
 		$account = new LecturerAccountDTO();
-		$account->livetimeStart = new DateTime();
-		$account->livetimeEnd = new DateTime();
+		$account->livetimeStart = new \DateTime();
+		$account->livetimeEnd = new \DateTime();
 		$user->accounts->add($account);
 		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
 		
 		$account = new TutorAccountDTO();
-		$account->livetimeStart = new DateTime();
-		$account->livetimeEnd = new DateTime();
+		$account->livetimeStart = new \DateTime();
+		$account->livetimeEnd = new \DateTime();
 		$user->accounts->add($account);
 		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
 		
 		$account = new GuestAccountDTO();
-		$account->livetimeStart = new DateTime();
-		$account->livetimeEnd = new DateTime();
+		$account->livetimeStart = new \DateTime();
+		$account->livetimeEnd = new \DateTime();
 		$user->accounts->add($account);
 		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
 		

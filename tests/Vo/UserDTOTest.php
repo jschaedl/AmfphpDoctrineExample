@@ -1,6 +1,10 @@
 <?php
 
-class UserDTOTest extends PHPUnit_Framework_TestCase
+namespace tests\Vo;
+
+use Service\Vo\User\UserDTO;
+
+class UserDTOTest extends \PHPUnit_Framework_TestCase
 {
 	protected $userDTO;
 	

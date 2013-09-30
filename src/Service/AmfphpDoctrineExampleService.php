@@ -1,6 +1,9 @@
 <?php
 
+namespace Service;
+
 use Doctrine\ORM\EntityManager;
+
 class AmfphpDoctrineExampleService 
 {	    
     public $dic;

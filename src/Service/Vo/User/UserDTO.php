@@ -1,5 +1,9 @@
 <?php
 
+namespace Service\Vo\User;
+
+use Service\Vo\AbstractDTO;
+
 /**
  * @Entity @Table(name="user")
  */
@@ -21,7 +25,7 @@ class UserDTO extends AbstractDTO
     public $lastLogin;
     
     /**
-     * @ManyToMany(targetEntity="AccountDTO", cascade={"persist", "remove"})
+     * @ManyToMany(targetEntity="\Service\Vo\Account\AccountDTO", cascade={"persist", "remove"})
      * @JoinTable(name="users_accounts",
      *      joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="account_id", referencedColumnName="id")}
@@ -42,7 +46,7 @@ class UserDTO extends AbstractDTO
     	if (!empty($this->username) && !empty($this->password)) {
     		$this->activationKey = md5($this->username . $this->password);
     	} else { 
-    		throw new InvalidArgumentException('username and password must be set');
+    		throw new \InvalidArgumentException('username and password must be set');
     	}
     }
     

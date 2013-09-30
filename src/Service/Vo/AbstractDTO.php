@@ -1,5 +1,7 @@
 <?php
 
+namespace Service\Vo;
+
 /**
  * @MappedSuperclass 
  * @HasLifecycleCallbacks
@@ -24,11 +26,11 @@ abstract class AbstractDTO
 	
 	/** @PrePersist */
 	public function onPersist() {
-	    $this->creationDate = new DateTime();
+	    $this->creationDate = new \DateTime();
 	}
 	
 	/** @PreUpdate */
 	public function onUpdate() {
-		$this->modificationDate = new DateTime();
+		$this->modificationDate = new \DateTime();
 	}
 }

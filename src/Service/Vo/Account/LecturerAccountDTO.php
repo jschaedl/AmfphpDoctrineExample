@@ -1,5 +1,7 @@
 <?php
 
+namespace Service\Vo\Account;
+
 /**
  * @Entity
  */

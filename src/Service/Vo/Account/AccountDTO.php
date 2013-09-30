@@ -1,5 +1,9 @@
 <?php
 
+namespace Service\Vo\Account;
+
+use Service\Vo\AbstractDTO;
+
 /**
  * @Entity @Table(name="account") 
  * @InheritanceType("SINGLE_TABLE")
