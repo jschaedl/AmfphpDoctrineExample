@@ -24,6 +24,6 @@
         "silexlabs/amfphp": "dev-master"
     },
     "autoload": {
-        "classmap": ["services/"]
+        "classmap": ["src/"]
     }
 }

@@ -12,7 +12,44 @@ class AmfphpDoctrineExampleServiceTest extends PHPUnit_Framework_TestCase
 		$this->exampleService = null;
 	}
 	
-	function test_get() {
-		$this->assertEquals('test', $this->amfphpDoctrineExampleService->get('test'));
+	public function test_createUser() {
+		$user = new UserDTO();
+		$user->username = 'jschaedl';
+		$user->generatePassword('123456');
+		$user->generateActivationKey();
+		$account = new LecturerAccountDTO();
+		$account->livetimeStart = new DateTime();
+		$account->livetimeEnd = new DateTime();
+		$user->accounts->add($account);
+		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
+		
+		$account = new TutorAccountDTO();
+		$account->livetimeStart = new DateTime();
+		$account->livetimeEnd = new DateTime();
+		$user->accounts->add($account);
+		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
+		
+		$account = new GuestAccountDTO();
+		$account->livetimeStart = new DateTime();
+		$account->livetimeEnd = new DateTime();
+		$user->accounts->add($account);
+		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
+		
+		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($user);
+		$this->amfphpDoctrineExampleService->dic['entityManager']->flush();
+		
 	}
+	/*
+	public function test_readUser() {
+	
+	}
+	
+	public function test_updateUser() {
+	
+	}
+	
+	public function test_deleteUser() {
+	
+	}
+	*/
 }

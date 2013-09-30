@@ -5,9 +5,6 @@
  */
 class UserDTO extends AbstractDTO
 {
-    /** @Id @Column(type="integer") @GeneratedValue(strategy="IDENTITY") */
-    public $userId;
-
     /** @Column(type="string") */
     public $username;
     
@@ -17,15 +14,25 @@ class UserDTO extends AbstractDTO
     /** @Column(type="string") */
     public $activationKey;
     
-    /** @Column(type="string") */
-    public $isActivated;
+    /** @Column(type="boolean") */
+    public $isActivated = false;
     
-    /** @Column(type="datetime") */
+    /** @Column(type="datetime", nullable=true) */
     public $lastLogin;
     
-    /** @OneToMany(targetEntity="AccountDTO", mappedBy="userId", fetch="EAGER", indexBy="accountId") */
+    /**
+     * @ManyToMany(targetEntity="AccountDTO", cascade={"persist", "remove"})
+     * @JoinTable(name="users_accounts",
+     *      joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="account_id", referencedColumnName="id")}
+     *      )
+     **/
     public $accounts;
 
+    
+    public function __construct() {
+        $this->accounts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
     
     public function generatePassword($password) {
     	$this->password = md5($password);

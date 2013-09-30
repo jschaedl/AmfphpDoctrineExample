@@ -8,7 +8,7 @@ class DIContainer extends Pimple
 {
 	public function __construct() {
 		$this['isDevMode'] = false;
-		$this['domainObjectsPath'] =  array('services/vo');
+		$this['domainObjectsPath'] =  array('src/Service/Vo');
 		$this['databaseConfig'] = array(
 			'driver' => 'pdo_mysql', 'user' => 'foo', 
 			'password' => 'foo', 'dbname' => 'foo');
