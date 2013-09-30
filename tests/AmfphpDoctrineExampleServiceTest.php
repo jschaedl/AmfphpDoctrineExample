@@ -6,14 +6,13 @@ use Service\Vo\User\UserDTO;
 use Service\Vo\Account\LecturerAccountDTO;
 use Service\Vo\Account\GuestAccountDTO;
 use Service\Vo\Account\TutorAccountDTO;
-use Service\AmfphpDoctrineExampleService;
 
 class AmfphpDoctrineExampleServiceTest extends \PHPUnit_Framework_TestCase
 {
-	protected $amfphpDoctrineExampleService;
+	protected $exampleService;
 	
 	protected function setUp() {
-		$this->amfphpDoctrineExampleService = new AmfphpDoctrineExampleService();
+		$this->exampleService = new \AmfphpDoctrineExampleService();
 	}
 	
 	protected function tearDown() {
@@ -29,22 +28,22 @@ class AmfphpDoctrineExampleServiceTest extends \PHPUnit_Framework_TestCase
 		$account->livetimeStart = new \DateTime();
 		$account->livetimeEnd = new \DateTime();
 		$user->accounts->add($account);
-		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
+		$this->exampleService->dic['entityManager']->persist($account);
 		
 		$account = new TutorAccountDTO();
 		$account->livetimeStart = new \DateTime();
 		$account->livetimeEnd = new \DateTime();
 		$user->accounts->add($account);
-		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
+		$this->exampleService->dic['entityManager']->persist($account);
 		
 		$account = new GuestAccountDTO();
 		$account->livetimeStart = new \DateTime();
 		$account->livetimeEnd = new \DateTime();
 		$user->accounts->add($account);
-		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($account);
+		$this->exampleService->dic['entityManager']->persist($account);
 		
-		$this->amfphpDoctrineExampleService->dic['entityManager']->persist($user);
-		$this->amfphpDoctrineExampleService->dic['entityManager']->flush();
+		$this->exampleService->dic['entityManager']->persist($user);
+		$this->exampleService->dic['entityManager']->flush();
 		
 	}
 	/*

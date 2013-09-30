@@ -1,8 +1,7 @@
 <?php
 
-namespace Service;
-
 use Doctrine\ORM\EntityManager;
+use Service\Vo\User\UserDTO;
 
 class AmfphpDoctrineExampleService 
 {	    

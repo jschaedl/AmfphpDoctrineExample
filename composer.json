@@ -24,6 +24,7 @@
         "silexlabs/amfphp": "dev-master"
     },
     "autoload": {
-        "psr-0": { "Service": "src" }
+        "psr-0": { "Service": "src" },
+        "files": ["src/Service/AmfphpDoctrineExampleService.php", "src/Service/DIContainer.php"]
     }
 }
