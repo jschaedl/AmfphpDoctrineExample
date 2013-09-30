@@ -11,7 +11,7 @@
 	<target name="02 phploc">
 	    <exec executable="/Applications/MAMP/bin/php/php${PHP_VERSION}/bin/php">
 	        <arg value="vendor/bin/phploc"/>
-	    	<arg value="services"/>
+	    	<arg value="src"/>
 	    </exec>
 	</target>
     <target name="03 doctrine create">
