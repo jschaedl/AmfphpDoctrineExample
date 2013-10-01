@@ -3,6 +3,7 @@
 namespace Service\Vo\User;
 
 use Service\Vo\AbstractDTO;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Entity @Table(name="user")
@@ -35,7 +36,7 @@ class UserDTO extends AbstractDTO
 
     
     public function __construct() {
-        $this->accounts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->accounts = new ArrayCollection();
     }
     
     public function generatePassword($password) {
