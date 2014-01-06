@@ -20,9 +20,8 @@ abstract class AbstractDTO
 	/** @Column(type="datetime", nullable=true)  */
 	public $modificationDate;
 	
-	/** @Column(type="datetime", nullable=true) */
-	public $locked;
-	
+	/** @Version @Column(type="integer") */
+	public $version;
 	
 	/** @PrePersist */
 	public function onPersist() {
